@@ -15,7 +15,7 @@ const Signup = () => {
          const {name , email , password , reEnterPassword} = user
 
          if(name && email && password && (password === reEnterPassword)){
-            axios.post("http://localhost:9002/signup",user)
+            axios.post("https://nabackend-omnarayansingh.vercel.app/register",user)
             .then(res =>{
                 navigate("/nasaphoto")
             })
