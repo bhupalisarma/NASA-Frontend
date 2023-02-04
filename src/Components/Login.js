@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Login = ({ setLoginUser }) => {
 
@@ -20,11 +21,13 @@ const Login = ({ setLoginUser }) => {
     }
 
     const login = () => {
-        axios.post("http://localhost:9002/login", user)
+        axios.post("https://nabackend-omnarayansingh.vercel.app/login", user)
             .then(res => {
                 navigate("/nasaphoto")
             })
     }
+
+    const { loginWithRedirect } = useAuth0();
 
     return (
         <div className="login">
@@ -34,6 +37,7 @@ const Login = ({ setLoginUser }) => {
             <div className="button" onClick={login}>Login</div>
             <div>or</div>
             <div className="button" onClick={() => navigate("/signup")}>Signup</div>
+            <button onClick={() => loginWithRedirect()}>Log In</button>;
         </div>
     )
 }
