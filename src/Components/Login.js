@@ -20,7 +20,7 @@ const Login = ({ setLoginUser }) => {
     }
 
     const login = () => {
-        axios.post("http://nabackend-navy.vercel.app/login", user)
+        axios.post("https://nabackend-omnarayansingh.vercel.app/login", user)
             .then(res => {
                 navigate("/nasaphoto")
             })
