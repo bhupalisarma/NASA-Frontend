@@ -37,7 +37,8 @@ const Login = ({ setLoginUser }) => {
             <div className="button" onClick={login}>Login</div>
             <div>or</div>
             <div className="button" onClick={() => navigate("/signup")}>Signup</div>
-            <button onClick={() => loginWithRedirect()}>Log In</button>;
+            <div>or</div>
+            <button className="loginBtn loginBtn--google" onClick={() => loginWithRedirect()}>Log In with Google</button>
         </div>
     )
 }
